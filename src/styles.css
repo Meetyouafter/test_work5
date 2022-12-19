@@ -1,0 +1,269 @@
+@font-face {
+  font-family: 'Roboto-medium';
+  src: url('./fonts/Roboto/Roboto-Medium.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-bold';
+  src: url('./fonts/Roboto/Roboto-Bold.ttf') format('ttf');
+}
+
+body {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
+
+.logo {
+  width: 115px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-top: 20px;
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+
+.icon_edit {
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: start;
+  margin: 0;
+  padding: 0;
+  min-width: 70px;
+}
+
+.menu_item {
+  display: flex;
+  height: 50px;
+  padding: 10px 0 15px 15px;
+  font-family: Roboto-medium;
+  font-size: 14px;
+  border-left: 5px white solid;
+  align-items: center;
+}
+
+.menu > .menu_item:hover {
+  border-left: 5px rgb(102, 102, 218) solid;
+  font-family: Roboto-bold;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.shop {
+  background-color: #f8faff;
+  padding-left: 5%;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 6fr 1fr 3fr;
+  padding-top: 20px;
+}
+
+.userName {
+  font-family: Roboto-medium;
+  font-size: 12px;
+  background-color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  margin-right: 2%;
+}
+
+.userName > img {
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+}
+
+.navigation {
+  font-family: Roboto-medium;
+}
+
+.mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px #d4d4d4 solid;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background: #55c97b;
+  border: 0 #55c97b;
+  font-family: Roboto-medium;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.title {
+  font-family: Roboto-bold;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+.position {
+  padding: 10px 20px 10px 20px;
+  align-items: center;
+  background-color: white;
+  font-family: Roboto-medium;
+  width: 90%;
+  border-radius: 8px;
+}
+
+.items {
+    font-size: 14px;
+    font-family: Roboto-medium;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 5px;
+    padding-bottom: 30px;
+
+}
+
+.header_wrapper {
+  font-weight: bold;
+  font-family: Roboto-medium;
+  padding-bottom: 20px;
+  border-bottom: 1px white solid;
+  justify-content: space-around;
+  column-gap: 5px;
+  padding-bottom: 30px;
+}
+
+.items_container {
+    background-color: white;
+}
+
+.remove_item {
+  background: #b1b1b1;
+  cursor: pointer;
+  display: flex;
+  border-radius: 4px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Roboto-medium;
+  font-size: 12px;
+}
+
+.edit_item {
+  background: #55c97b;
+  cursor: pointer;
+  display: flex;
+  border-radius: 4px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Roboto-medium;
+  font-size: 12px;
+}
+
+/*<--Modal-->*/
+
+.modal-header {
+  align-items: baseline;
+  font-family: Roboto-medium;
+  padding-bottom: 0;
+  border: 0;
+}
+
+.close_btn {
+  align-items: flex-end;
+  display: flex;
+}
+
+.select {
+  width: 10%;
+}
+
+.description {
+  font-size: 10px;
+  font-family: Roboto-medium;
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .icon_edit {
+        height: 15px;
+        width: 15px;
+      }
+
+      .remove_item {
+        font-size: 10px;
+      }
+      
+      .edit_item {
+        font-size: 10px;
+      }
+
+      .menu_item {
+        font-size: 10px;
+        padding: 0;
+
+      }
+
+}
+
+@media screen and (max-width: 650px) {
+    span {
+        display: none;
+    }
+
+    .logo {
+        width: 60px;
+        padding: 0;
+    }
+
+    .menu {
+        align-items: center;
+    }
+
+    .items {
+        font-size: 10px;
+        text-overflow: ellipsis;
+    }
+
+    .items_container {
+        font-size: 12px;
+    }
+
+    .remove_item {
+        font-size: 10px;
+        height: 20px;
+        width: 30px;
+      }
+      
+      .edit_item {
+        font-size: 10px;
+        height: 20px;
+        width: 30px;
+
+      }
+
+}
