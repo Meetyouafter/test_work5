@@ -23,43 +23,168 @@
     <script src="./src/index.js"></script>
   </head>
   <body>
+    <!-- Модальное окно -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content container">
+          <div class="modal-header row">
+            <div class="col title" id="exampleModalLabel">Создать магазин</div>
+            <div class="col close_btn">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Закрыть"
+              ></button>
+            </div>
+          </div>
+
+          <div class="modal-body row">
+            <div class="col">
+              <div class="title" style="font-size: 14px; padding: 0">
+                Шаблон
+              </div>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                style="margin-right: 90px"
+              >
+                <option selected>Стандартный</option>
+                <option value="1">Стандартный</option>
+              </select>
+            </div>
+            <div class="col">
+              <div class="title" style="font-size: 14px; padding: 0">
+                Цветовая схема
+              </div>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Классическая</option>
+                <option value="1">Классическая</option>
+              </select>
+            </div>
+            <div class="row" style="justify-content: center">
+              <div
+                class="title"
+                style="
+                  font-size: 14px;
+                  padding-left: 10px;
+                  padding-bottom: 0;
+                  border-radius: 0;
+                  padding-top: 30px;
+                "
+              >
+                Домен
+              </div>
+            </div>
+            <div
+              class="row"
+              style="
+                justify-content: center;
+                padding-left: 20px;
+                padding-right: 0;
+              "
+            >
+              <input
+                class="form-control"
+                style="width: 70%; border-radius: 0; background-color: #e6e6e9"
+                type="text"
+                placeholder="Например ivangrozniy"
+                aria-label="default input example"
+              />
+              <button
+                type="button"
+                style="
+                  width: 30%;
+                  border-radius: 0;
+                  background-color: #6666cc;
+                  color: white;
+                "
+                class="btn btn-info"
+              >
+                work5.ru
+              </button>
+            </div>
+            <div class="col description" style="padding-right: 50px">
+              <img
+                src="./src/images/modal_attention.svg"
+                style="width: 55px; background-color: white; margin-right: 10px"
+              />
+              <div>
+                В названии домена разрешены латиница и "-", запрещается
+                использовать словосочетание Work 5. После создания магазина Вы
+                сможете прикрутить свой домен (например ivangrozniy.ru).
+                Подробнее по <a href="#">ссылке</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="modal-footer row"
+            style="justify-content: flex-start; border: 0"
+          >
+            <button
+              type="button"
+              class="btn btn-primary row"
+              data-bs-dismiss="modal"
+              style="background-color: #b1b1b1; width: 25%; border-radius: 0"
+            >
+              Отмена
+            </button>
+            <button
+              style="width: 25%; border-radius: 0"
+              type="button"
+              class="btn btn-primary row"
+            >
+              Создать
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div>
       <div class="menu">
         <img src="./src/images/work5.png" class="logo" />
         <div class="menu_item">
-          <img src="./src/images/home.svg" class="icon" />
+          <img src="./src/images/home.svg" class="icon hover" />
           <span>Главная</span>
         </div>
         <div class="menu_item">
-          <img src="./src/images/cart.svg" class="icon" />
+          <img src="./src/images/cart.svg" class="icon hover" />
           <span>Мои магазины</span>
         </div>
         <div class="menu_item">
-          <img src="./src/images/attention.svg" class="icon" />
+          <img src="./src/images/attention.svg" class="icon hover" />
           <span>Промоматериалы</span>
         </div>
         <div class="menu_item">
-          <img src="./src/images/static.svg" class="icon" />
+          <img src="./src/images/static.svg" class="icon hover" />
           <span>Статистика</span>
         </div>
         <div class="menu_item">
-          <img src="./src/images/wallet.svg" class="icon" />
+          <img src="./src/images/wallet.svg" class="icon hover" />
           <span>Баланс</span>
         </div>
         <div class="menu_item">
-          <img src="./src/images/user.svg" class="icon" />
+          <img src="./src/images/user.svg" class="icon hover" />
           <span>Персональные данные</span>
         </div>
         <div class="menu_item">
-          <img src="./src/images/help.svg" class="icon" />
+          <img src="./src/images/help.svg" class="icon hover" />
           <span>FAQ</span>
         </div>
         <div class="menu_item">
-          <img src="./src/images/micro.svg" class="icon" />
+          <img src="./src/images/micro.svg" class="icon hover" />
           <span>Техподдержка</span>
         </div>
         <div class="menu_item">
-          <img src="./src/images/logout.svg" class="icon" />
+          <img src="./src/images/logout.svg" class="icon hover" />
           <span>Выход</span>
         </div>
       </div>
@@ -69,12 +194,15 @@
       <div class="header">
         <div class="navigation">Главная > Мои магазины</div>
         <div class="mail">
-          <img src="./src/images/mail.svg" />
+          <div class="notification_container">
+            <img src="./src/images/mail.svg" />
+            <div class="red_circle"></div>
+          </div>
         </div>
 
         <div class="userName">
-          <img src="./src/images/avatar.png" />
-          Максим Добжанский
+          <img src="./src/images/avatar.png" class="avatar" />
+          <span style="font-size: 14px">Максим Добжанский</span>
         </div>
       </div>
 
@@ -87,195 +215,74 @@
         + Создать свой магазин
       </button>
 
-      <!-- Модальное окно -->
-      <div class="modal fade" id="exampleModal">
-        <div class="modal-dialog">
-          <div class="modal-content container">
-            <div class="modal-header row">
-              <div
-                class="col title"
-                id="exampleModalLabel"
-                style="font-size: 18px"
-              >
-                Создать магазин
-              </div>
-              <div class="col close_btn">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Закрыть"
-                ></button>
-              </div>
-            </div>
-
-            <div class="modal-body row">
-              <div class="col">
-                <div class="title" style="font-size: 16px; padding: 0">
-                  Шаблон
-                </div>
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  style="margin-right: 90px"
-                >
-                  <option selected>Стандартный</option>
-                  <option value="1">Стандартный</option>
-                </select>
-              </div>
-              <div class="col">
-                <div class="title" style="font-size: 16px; padding: 0">
-                  Цветовая схема
-                </div>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Классическая</option>
-                  <option value="1">Классическая</option>
-                </select>
-              </div>
-              <div class="row" style="justify-content: center">
-                <div
-                  class="title"
-                  style="
-                    font-size: 16px;
-                    padding-left: 10px;
-                    padding-bottom: 0;
-                    border-radius: 0;
-                    padding-top: 30px;
-                  "
-                >
-                  Домен
-                </div>
-              </div>
-              <div
-                class="row"
-                style="
-                  justify-content: center;
-                  padding-left: 20px;
-                  padding-right: 0;
-                "
-              >
-                <input
-                  class="form-control"
-                  style="
-                    width: 70%;
-                    border-radius: 0;
-                    background-color: #e6e6e9;
-                  "
-                  type="text"
-                  placeholder="Например ivangrozniy"
-                  aria-label="default input example"
-                />
-                <button
-                  type="button"
-                  style="
-                    width: 30%;
-                    border-radius: 0;
-                    background-color: #6666cc;
-                    color: white;
-                  "
-                  class="btn btn-info"
-                >
-                  work5.ru
-                </button>
-              </div>
-              <div class="col description" style="padding-right: 50px">
-                <img
-                  src="./src/images/modal_attention.svg"
-                  style="
-                    width: 55px;
-                    background-color: white;
-                    margin-right: 10px;
-                  "
-                />
-                <div>
-                  В названии домена разрешены латиница и "-", запрещается
-                  использовать словосочетание Work 5. После создания магазина Вы
-                  сможете прикрутить свой домен (например ivangrozniy.ru).
-                  Подробнее по <a href="#">ссылке</a>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="modal-footer row"
-              style="justify-content: flex-start; border: 0"
-            >
-              <button
-                type="button"
-                class="btn btn-primary row"
-                data-bs-dismiss="modal"
-                style="background-color: #b1b1b1; width: 25%; border-radius: 0"
-              >
-                Отмена
-              </button>
-              <button
-                style="width: 25%; border-radius: 0"
-                type="button"
-                class="btn btn-primary row"
-              >
-                Создать
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div>
         <div class="title">Управление магазинами</div>
       </div>
 
-      <div class="container items_container">
-        <div class="row header_wrapper">
-          <div class="col-1">№</div>
-          <div class="col-2">Название</div>
-          <div class="col-3">Адрес</div>
-          <div class="col-2">Действие</div>
-          <div class="col-2"></div>
-        </div>
-
-        <div class="row items">
-          <div class="col-1">12345</div>
-          <div class="col-2">Дипломная работа</div>
-          <div class="col-3">http://www.work5.ru/services</div>
-          <div class="edit_item col-2">
-            <img
-              src="./src/images/edit.svg"
-              class="icon_edit"
-              style="margin: 0"
-            />
-            <span>Редактировать</span>
-          </div>
-          <div class="remove_item col-2">
-            <img
-              src="./src/images/close.svg"
-              class="icon_edit"
-              style="margin: 0"
-            />
-            <span>Редактировать</span>
-          </div>
-        </div>
-        
-        <div class="row items">
-          <div class="col-1">12345</div>
-          <div class="col-2">Дипломная работа</div>
-          <div class="col-3">http://www.work5.ru/services</div>
-          <div class="edit_item col-2">
-            <img
-              src="./src/images/edit.svg"
-              class="icon_edit"
-              style="margin: 0"
-            />
-            <span>Редактировать</span>
-          </div>
-          <div class="remove_item col-2">
-            <img
-              src="./src/images/close.svg"
-              class="icon_edit"
-              style="margin: 0"
-            />
-            <span>Редактировать</span>
-          </div>
-        </div>
+      <div class="row table-responsive" style="max-width: 75vw">
+        <table class="table col align-middle">
+          <thead>
+            <tr class="table_title">
+              <th scope="col">№</th>
+              <th scope="col">Название</th>
+              <th scope="col">Адрес</th>
+              <th scope="col">Действие</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="item">
+              <td>12345</td>
+              <td>Дипломная работа</td>
+              <td>http://www.work5.ru/services</td>
+              <td>
+                <div class="edit_item">
+                  <img
+                    src="./src/images/edit.svg"
+                    class="icon_edit"
+                    style="margin: 0"
+                  />
+                  Редактировать
+                </div>
+              </td>
+              <td>
+                <div class="remove_item">
+                  <img
+                    src="./src/images/close.svg"
+                    class="icon_edit"
+                    style="margin: 0"
+                  />
+                  Редактировать
+                </div>
+              </td>
+            </tr>
+            <tr class="item">
+              <td>12345</td>
+              <td>Дипломная работа</td>
+              <td>http://www.work5.ru/services</td>
+              <td>
+                <div class="edit_item">
+                  <img
+                    src="./src/images/edit.svg"
+                    class="icon_edit"
+                    style="margin: 0"
+                  />
+                  Редактировать
+                </div>
+              </td>
+              <td>
+                <div class="remove_item">
+                  <img
+                    src="./src/images/close.svg"
+                    class="icon_edit"
+                    style="margin: 0"
+                  />
+                  Редактировать
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <script

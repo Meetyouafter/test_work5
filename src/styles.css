@@ -1,14 +1,16 @@
 @font-face {
   font-family: 'Roboto-medium';
   src: url('./fonts/Roboto/Roboto-Medium.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto-bold';
   src: url('./fonts/Roboto/Roboto-Bold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-regular';
+  src: url('./fonts/Roboto/Roboto-Regular.ttf') format('ttf');
 }
 
 body {
@@ -53,20 +55,31 @@ body {
   padding: 10px 0 15px 15px;
   font-family: Roboto-medium;
   font-size: 14px;
+  color: #c3c3c3;
   border-left: 5px white solid;
   align-items: center;
 }
 
-.menu > .menu_item:hover {
-  border-left: 5px rgb(102, 102, 218) solid;
+.menu>.menu_item:hover {
+  border-left: 5px #6666cc solid;
   font-family: Roboto-bold;
   font-weight: bold;
   cursor: pointer;
+  color: #343434;
+}
+
+.menu>.menu_item:hover .hover {
+  filter: invert(56%) sepia(37%) saturate(6577%) hue-rotate(218deg) brightness(83%) contrast(91%);
 }
 
 .shop {
   background-color: #f8faff;
   padding-left: 5%;
+}
+
+.avatar {
+  border: 4px #e3e3e3 solid;
+  border-radius: 50%;
 }
 
 .header {
@@ -86,7 +99,7 @@ body {
   margin-right: 2%;
 }
 
-.userName > img {
+.userName>img {
   margin-left: 5px;
   margin-right: 10px;
   width: 45px;
@@ -95,6 +108,7 @@ body {
 
 .navigation {
   font-family: Roboto-medium;
+  font-size: 14px;
 }
 
 .mail {
@@ -106,17 +120,32 @@ body {
   margin-right: 10px;
 }
 
+.red_circle {
+  background-color: #e42626;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.notification_container {
+  position: relative;
+}
+
 .btn-primary {
   background: #55c97b;
   border: 0 #55c97b;
-  font-family: Roboto-medium;
+  font-family: Roboto-regular;
+  font-size: 12px;
   margin-bottom: 30px;
   margin-top: 20px;
 }
 
 .title {
   font-family: Roboto-bold;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   padding-bottom: 30px;
 }
@@ -130,28 +159,19 @@ body {
   border-radius: 8px;
 }
 
-.items {
-    font-size: 14px;
-    font-family: Roboto-medium;
-    align-items: center;
-    justify-content: space-around;
-    column-gap: 5px;
-    padding-bottom: 30px;
-
+.table {
+  background-color: white;
+  font-family: Roboto-medum;
+  font-size: 14px;
+  border-collapse: 0;
 }
 
-.header_wrapper {
-  font-weight: bold;
-  font-family: Roboto-medium;
-  padding-bottom: 20px;
-  border-bottom: 1px white solid;
-  justify-content: space-around;
-  column-gap: 5px;
-  padding-bottom: 30px;
+.table_title {
+  border-bottom: 20px white solid;
 }
 
-.items_container {
-    background-color: white;
+.item {
+  height: 80px;
 }
 
 .remove_item {
@@ -165,6 +185,7 @@ body {
   color: white;
   font-family: Roboto-medium;
   font-size: 12px;
+  min-width: 80px;
 }
 
 .edit_item {
@@ -178,6 +199,7 @@ body {
   color: white;
   font-family: Roboto-medium;
   font-size: 12px;
+  min-width: 80px;
 }
 
 /*<--Modal-->*/
@@ -199,71 +221,91 @@ body {
 }
 
 .description {
-  font-size: 10px;
+  font-size: 12px;
   font-family: Roboto-medium;
   display: flex;
   align-items: center;
   padding-top: 30px;
 }
 
+.modal-backdrop {
+  background: rgb(255, 255, 255);
+}
+
+.modal-backdrop.show {
+  opacity: .0;
+}
+
+.modal {
+  margin-top: 12%;
+
+}
+
 
 @media screen and (max-width: 900px) {
 
-    .icon_edit {
-        height: 15px;
-        width: 15px;
-      }
+  .icon_edit {
+    height: 15px;
+    width: 15px;
+  }
 
-      .remove_item {
-        font-size: 10px;
-      }
-      
-      .edit_item {
-        font-size: 10px;
-      }
+  .remove_item {
+    font-size: 10px;
+    width: 100%;
 
-      .menu_item {
-        font-size: 10px;
-        padding: 0;
+  }
 
-      }
+  .edit_item {
+    font-size: 10px;
+    width: 100%;
+  }
+
+  .menu_item {
+    font-size: 10px;
+    padding: 0;
+  }
 
 }
 
 @media screen and (max-width: 650px) {
-    span {
-        display: none;
-    }
+  span {
+    display: none;
+  }
 
-    .logo {
-        width: 60px;
-        padding: 0;
-    }
+  .userName {
+    justify-content: center;
+  }
 
-    .menu {
-        align-items: center;
-    }
+  .logo {
+    width: 60px;
+    padding: 0;
+  }
 
-    .items {
-        font-size: 10px;
-        text-overflow: ellipsis;
-    }
+  .menu {
+    align-items: center;
+  }
 
-    .items_container {
-        font-size: 12px;
-    }
+  .items {
+    font-size: 10px;
+    text-overflow: ellipsis;
+  }
 
-    .remove_item {
-        font-size: 10px;
-        height: 20px;
-        width: 30px;
-      }
-      
-      .edit_item {
-        font-size: 10px;
-        height: 20px;
-        width: 30px;
+  .items_container {
+    font-size: 12px;
+  }
 
-      }
+  .navigation {
+    font-size: 12px;
+  }
+
+  .header {
+    grid-template-columns: 6fr 3fr 3fr
+  }
+
+  .form-select {
+    font-size: 14px;
+  }
+
+
 
 }
