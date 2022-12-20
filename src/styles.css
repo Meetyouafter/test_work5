@@ -236,12 +236,6 @@ body {
   opacity: .0;
 }
 
-.modal {
-  margin-top: 12%;
-
-}
-
-
 @media screen and (max-width: 900px) {
 
   .icon_edit {
